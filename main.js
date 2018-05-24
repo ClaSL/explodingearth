@@ -15,5 +15,16 @@
  loadSVG("assets/sarah.svg", "div", function(){
      console.log("sarah loaded");
      document.querySelector("#booms").style.display="none";
+     //Select all elements (paths inside land and water)
+
+     let stuff = document.querySelectorAll(".land path, .water path")
+     console.log(stuff);
+
+     stuff.forEach((el,i)=>{
+         console.log(i);
+        setTimeout(()=>{
+            el.style.transform = `translate(${Math.random()*100-50}px,${Math.random()*100-50}px)`;
+        })
+     },i*10)
      
  });
